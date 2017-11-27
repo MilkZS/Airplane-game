@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="NumText" format="string"></attr>
+    <attr name="NumTextColor" format="color"></attr>
+    <attr name="NumTextSize" format="dimension"></attr>
+    
+    <declare-styleable name="verificationCodesView">
+        <attr name="NumText"></attr>
+        <attr name="NumTextColor"></attr>
+        <attr name="NumTextSize"></attr>
+    </declare-styleable>
+</resources>

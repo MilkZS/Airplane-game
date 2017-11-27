@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">verificationCodes</string>
+    <!-- first click to show random codes -->
+    <string name="first_show_verification_codes">点击刷新验证码</string>
+    <!-- calculate of verification : add -->
+    <string name="add_random">加</string>
+    <string name="add_random_symbol">+</string>
+    <!-- calculate of verification : minus -->
+    <string name="minus_random">减</string>
+    <string name="minus_random_symbol">-</string>
+    <!-- calculate of verification : multiply -->
+    <string name="multiply_random">乘</string>
+    <string name="multiply_random_symbol">x</string>
+</resources>
