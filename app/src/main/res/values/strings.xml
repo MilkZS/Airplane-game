@@ -11,4 +11,5 @@
     <!-- calculate of verification : multiply -->
     <string name="multiply_random">乘</string>
     <string name="multiply_random_symbol">x</string>
+
 </resources>
