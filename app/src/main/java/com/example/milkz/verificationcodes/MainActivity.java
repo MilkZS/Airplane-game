@@ -8,7 +8,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // verificationCodesView codesView = new verificationCodesView(this);
         setContentView(R.layout.codesview);
     }
 }

@@ -55,7 +55,7 @@ public class verificationCodesView extends View{
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,default_codes_text_size,
                         getResources().getDisplayMetrics()));
         a.recycle(); // always remember to recycle typedArray.
-        refreshCodes();// refresh codes to show first verification codes.
+        firstToRefreshCodes(); // refresh codes to show first verification codes.
         paint = new Paint();
         paint.setTextSize(codes_text_size);
     }
@@ -74,6 +74,10 @@ public class verificationCodesView extends View{
         return super.onTouchEvent(event);
     }
 
+    private void firstToRefreshCodes(){
+        codes_text = getResources().getString(R.string.first_show_verification_codes);
+        postInvalidate();
+    }
 
     /**
      * Refresh the text of verification codes
