@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">verificationCodes</string>
+
+    <!-- name of user, when user login -->
+    <string name="login_user">用户名</string>
+    <string name="login_verification_codes">请输入验证码</string>
+    <!-- name of button to enter the game -->
+    <string name="login_enter">进入</string>
     <!-- first click to show random codes -->
     <string name="first_show_verification_codes">点击刷新验证码</string>
     <!-- calculate of verification : add -->

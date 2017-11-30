@@ -28,6 +28,8 @@ public class verificationCodesView extends View{
     private int codes_text_size ;
     private Paint paint ;
     private Random random = new Random();
+    private int location_x ;
+    private int location_y ;
 
     public verificationCodesView(Context context) {
         this(context,null);
@@ -62,10 +64,19 @@ public class verificationCodesView extends View{
 
     @Override
     public void onDraw(Canvas canvas) {
-
-        canvas.drawText(codes_text,45,100,paint);
+        canvas.drawText(codes_text,location_x,location_y,paint);
         super.onDraw(canvas);
     }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        location_x = widthMeasureSpec / 2;
+        location_y = heightMeasureSpec / 2;
+
+    }
+
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

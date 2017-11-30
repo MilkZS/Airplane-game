@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <!-- color of verificationCodes -->
     <color name="colorVerificationCodes">#FFC6C4C4</color>
+    <!-- title of login UI -->
+    <color name="color_login_title">#FF4F4F58</color>
 </resources>
