@@ -22,7 +22,7 @@
             android:layout_height="60sp"
             android:layout_gravity="center"
             android:clickable="false"
-            android:text=""/>
+            android:text="@string/login_verification_codes"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60sp"

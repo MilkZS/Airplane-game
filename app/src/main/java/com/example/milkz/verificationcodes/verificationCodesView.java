@@ -28,8 +28,6 @@ public class verificationCodesView extends View{
     private int codes_text_size ;
     private Paint paint ;
     private Random random = new Random();
-    private int location_x ;
-    private int location_y ;
 
     public verificationCodesView(Context context) {
         this(context,null);
@@ -49,34 +47,26 @@ public class verificationCodesView extends View{
         TypedArray a = context.getTheme().obtainStyledAttributes(
                 attrs,R.styleable.verificationCodesView, defStyleAttr, 0);
         codes_text = a.getString(0);
-
+         // refresh codes to show first verification codes.
         int default_codes_text_size = getResources().getInteger(R.integer.default_codes_text_size);
         if(DBG) Log.d(TAG,"default_codes_text_size:" + default_codes_text_size);
-        //it turns sp to px and set default value.
+        // turn sp to px and set default value.
         codes_text_size = a.getDimensionPixelSize(a.getIndex(2),
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,default_codes_text_size,
                         getResources().getDisplayMetrics()));
         a.recycle(); // always remember to recycle typedArray.
-        firstToRefreshCodes(); // refresh codes to show first verification codes.
+
         paint = new Paint();
         paint.setTextSize(codes_text_size);
+        firstToRefreshCodes();
     }
 
     @Override
     public void onDraw(Canvas canvas) {
-        canvas.drawText(codes_text,location_x,location_y,paint);
+        canvas.drawText(codes_text,getResources().getInteger(R.integer.verification_codes_x),
+                getResources().getInteger(R.integer.verification_codes_y),paint);
         super.onDraw(canvas);
     }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        location_x = widthMeasureSpec / 2;
-        location_y = heightMeasureSpec / 2;
-
-    }
-
-
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -85,6 +75,9 @@ public class verificationCodesView extends View{
         return super.onTouchEvent(event);
     }
 
+    /**
+     * first time to show points about verification codes
+     */
     private void firstToRefreshCodes(){
         codes_text = getResources().getString(R.string.first_show_verification_codes);
         postInvalidate();
@@ -103,19 +96,19 @@ public class verificationCodesView extends View{
         if(DBG) Log.d(TAG,"num1:" + num1 + " | num2:" + num2 + " | num3:" + num3);
         switch(num3){
             case 0:{
-                codes_text = num1 + "+" + num2;
+                codes_text = num1 + (String)getResources().getText(R.string.add_random) + num2;
                 postInvalidate();
                 String sAlgorithm = (String) getResources().getText(R.string.add_random_symbol);
                 return calculate(num1,num2,sAlgorithm);
             }
             case 1:{
-                codes_text = num1 + "-" + num2;
+                codes_text = num1 + (String)getResources().getText(R.string.minus_random) + num2;
                 postInvalidate();
                 String sAlgorithm = (String) getResources().getText(R.string.minus_random_symbol);
                 return calculate(num1,num2,sAlgorithm);
             }
             case 2:{
-                codes_text = num1 + "x" + num2;
+                codes_text = num1 + (String)getResources().getText(R.string.multiply_random) + num2;
                 postInvalidate();
                 String sAlgorithm = (String) getResources().getText(R.string.multiply_random_symbol);
                 return calculate(num1,num2,sAlgorithm);
@@ -146,6 +139,7 @@ public class verificationCodesView extends View{
                 sum = multiplyExact(num1,num2);
             }break;
         }
+        if(DBG) Log.d(TAG,"calculate sum = " + sum);
         return sum;
     }
 }

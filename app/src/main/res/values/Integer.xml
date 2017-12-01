@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- default value of codes_text_size -->
-    <integer name="default_codes_text_size">16</integer>
+    <integer name="default_codes_text_size">45</integer>
+    <!-- location to show verification codes -->
+    <integer name="verification_codes_x">60</integer>
+    <integer name="verification_codes_y">150</integer>
 
 </resources>
