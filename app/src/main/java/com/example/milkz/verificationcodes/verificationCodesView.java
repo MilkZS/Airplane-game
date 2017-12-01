@@ -29,6 +29,8 @@ public class verificationCodesView extends View{
     private Paint paint ;
     private Random random = new Random();
 
+    public static int verification_codes_result;
+
     public verificationCodesView(Context context) {
         this(context,null);
     }
@@ -71,7 +73,7 @@ public class verificationCodesView extends View{
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        refreshCodes();
+        verification_codes_result = refreshCodes();
         return super.onTouchEvent(event);
     }
 

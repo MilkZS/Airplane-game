@@ -17,5 +17,6 @@
     <!-- calculate of verification : multiply -->
     <string name="multiply_random">乘</string>
     <string name="multiply_random_symbol">x</string>
-
+    <!-- toast to point user to input the code again -->
+    <string name="verification_false_toast">验证码输入错误，请重新输入！</string>
 </resources>
