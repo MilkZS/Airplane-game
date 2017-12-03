@@ -29,7 +29,7 @@ public class verificationCodesView extends View{
     private Paint paint ;
     private Random random = new Random();
 
-    public static int verification_codes_result;
+    public static int verification_codes_result = Integer.MAX_VALUE;
 
     public verificationCodesView(Context context) {
         this(context,null);

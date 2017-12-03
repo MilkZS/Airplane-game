@@ -11,8 +11,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"></action>
-                <action android:name="com.example.milkz.verification.MainActivity"></action>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.example.milkz.verification.MainActivity" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

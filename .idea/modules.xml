@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Airplane-game.iml" filepath="$PROJECT_DIR$/Airplane-game.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/verificationCodes.iml" filepath="$PROJECT_DIR$/verificationCodes.iml" />
     </modules>
   </component>
 </project>
